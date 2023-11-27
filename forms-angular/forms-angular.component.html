@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signupForm</title>
+</head>
+
+<style>
+.container{
+    /* align-items: center; */
+    margin-top: 10%;
+    margin-left: 42%;
+    width: 350px;
+    height: 320px;
+    margin-right: 80%;
+
+    }
+    div{
+        margin: 15px;
+    }
+    .name{
+        display: flex;
+    }
+    input{
+        border-radius: 5px;
+        height: 20px;
+        /* color: rgb(85, 84, 84);
+        border-bottom: 2px; */
+    }
+    .name input{
+        margin-right: 10px;
+        width: 75px;
+        /* border: none; */
+       border-color: solid gray;
+       border-width: 2px;
+    }
+
+    button{
+        width: 150px;
+        margin-left: 13px;
+        background-color: rgb(121, 214, 45);
+        border: none;
+        border-radius: 5px;
+        height: 25px;
+        color: white;
+        font-size: 15px;
+        cursor: pointer;
+    }
+    h1{
+        margin-left: 40px;
+    }
+    
+    .formtable{
+        margin-left: 20%;
+    }
+    th{
+        padding: 20px;
+    }
+    a{
+        text-decoration: none;
+    }
+</style>
+<body>
+    
+    <div class="container" >
+        <div><h1>login</h1></div>
+   <div class="name" >
+    <input type="text" class="firstname" placeholder="firstname" [(ngModel)]="firstName">
+    <input type="text" class="lastname" placeholder="lastname" [(ngModel)]="lastName">
+   </div>
+   <div><input type="text" class="uname" placeholder="username" [(ngModel)]="userName"></div>
+   <div><input type="email" class="email" placeholder="email" [(ngModel)]="Email"></div>
+   <div><input type="password" class="pword" placeholder="password" [(ngModel)]="Password"></div>
+   <div><input type="password" class="pword" placeholder="Confirm password" [(ngModel)]="confirmPassword"></div>
+   <div><input type="tel" name="phone" id="phone" placeholder="Phone Number" pattern="[0-9]{10}" [(ngModel)]="phoneNumber" ></div>
+   <div><button type="submit" (click)="submit()">submit</button></div>
+   <!-- <div><button type="submit" (click)="submit()"><a routerLink="/profile" class="element" routerLinkActive="active" ariaCurrentWhenActive="page">submit</a></button></div> -->
+
+</div>
+<hr>
+<div>
+<table class="formtable" *ngIf="formData?.length !== 0">
+    <thead >
+        <tr>
+            <th class="col">firstName</th>
+            <th class="col">lastName</th>
+            <th class="col">userName</th>
+            <th class="col">Email</th>
+            <th class="col">Password</th>
+            <th class="col">confirmPassword</th>
+            <th class="col">phoneNumber</th>
+        </tr>
+    </thead>
+        <tbody>
+            <tr *ngFor = "let data of formData">
+            <td >{{data.firstName}} </td>
+            <td >{{data.lastName}} </td>
+            <td >{{data.userName}} </td>
+            <td >{{data.Email}}</td>
+            <td >{{data.Password}}</td>
+            <td >{{data.confirmPassword}}</td>
+            <td >{{data.phoneNumber}}</td>
+
+            </tr>
+        </tbody>
+    
+</table>
+</div>
+</body>
+</html>

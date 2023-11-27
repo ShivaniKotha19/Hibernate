@@ -1,0 +1,92 @@
+
+    <header>
+        <div class="headContainer">
+        <div class="title"><h1>skydash</h1></div>
+        <div><input type="text" class="txt" placeholder="search"></div>
+        <div class="loginform"><a routerLink="/forms" class="login" routerLinkActive="active" ariaCurrentWhenActive="page">Login</a>
+            <select name="date" class="date">
+
+                <option value="1">today(10 jan 2021)</option>
+              
+              </select>
+        </div>
+    </div>
+    </header>
+    <div class="container">
+        <div class="column1">
+            <nav>
+                <ul class="elementsList">
+                <li ><a href="#" class="element">Dashboard</a></li>
+                <li ><a routerLink="/profile" class="element" routerLinkActive="active" ariaCurrentWhenActive="page">profile</a></li>
+
+                 <li ><a href="#" class="element">UI Elements</a></li>   
+                 <li ><a href="#" class="element">forms Elements</a></li>
+                 <li ><a href="#" class="element">charts</a></li>
+                 <li ><a href="#" class="element">tables</a></li>
+                 <li ><a href="#" class="element">icons</a></li>
+                 <li><a href="#" class="element">user pages</a></li>
+                 <li ><a href="#" class="element">error pages</a></li>
+                  <li ><a href="#"class="element">Documentation</a></li>          
+                </ul>
+            </nav>
+        </div>
+        <main>
+            <div class="column2">
+                <div>
+                <div><h2>welcome Aamir</h2></div>
+                <p>all systems are running smoothly! you have 3 unread alerts!</p>
+            </div>
+            <div class="weatherImg">
+                <img src="/src/assets/images/weather_img.png" alt="weather image">
+            </div>
+        </div>
+            
+            <div class="details">
+                <div>
+                    <div><h2>order Details</h2></div>
+                <p> the total number of sessions within the data range. it is the period time a user is 
+                    actively engaged with  your webside. page app etc.
+                </p>
+                <div class="orderdetails" *ngFor="let data of dashboardData">
+                    <p *ngIf="data.rollNo">{{data.name}}</p>
+                    <p *ngIf="data.rollNo">{{data.rollNo}}</p>
+
+
+                </div>
+                </div>
+            </div>
+        </main>
+<!-- </div> -->
+        <article>
+        <div class="column3">
+             <div class="bookings">
+                <a href="#" class="redirect"> <div class="today">
+                <h3>todays Bookings</h3>
+                <p>4006</p>
+                <p>10.00%(30days)</p>
+            </div></a>
+            <a href="#" class="redirect">  <div class="total">
+                <h3>total Bokkings</h3>
+                <p>613444</p>
+                <p>22.00%(30days)</p>
+            </div></a>
+            <!-- </div> -->
+        
+            <a href="#" class="redirect"> <div class="mettings">
+                <h3>number of meetings</h3>
+                <p>34040</p>
+                <p>2.00%(30days)</p>
+            </div>
+            </a>
+
+            <a> <div class="clients" (click)="getDashboardData()"> 
+                <h3>number of clients</h3>
+                <p>48033</p>
+                <p>0.22%(30days)</p>
+            </div>
+            </a>
+        </div> 
+
+    </div>
+    </article> 
+    </div>
